@@ -15,8 +15,8 @@ type UnionJD struct {
 	// contains filtered or unexported fields
 }
 
-// NewUnionJdGo returns a jd service.
-func NewUnionJdGo() *UnionJD {
+// NewUnionJD returns a jd service.
+func NewUnionJD() *UnionJD {
 	return &UnionJD{}
 }
 
