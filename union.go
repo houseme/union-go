@@ -6,21 +6,40 @@
 
 package jd
 
+import (
+	"context"
+
+	"github.com/gogf/gf/v2/os/glog"
+)
+
 const (
-	version = "0.0.1"
+	version   = "0.0.1"
+	serverURL = "https://router.jd.com/api"
 )
 
 // UnionJD is a jd service.
 type UnionJD struct {
-	// contains filtered or unexported fields
+	accessToken string
+	appKey      string
+	appSecret   string
+	logger      glog.ILogger
 }
 
 // NewUnionJD returns a jd service.
-func NewUnionJD() *UnionJD {
-	return &UnionJD{}
+func NewUnionJD(ctx context.Context, appKey, appSecret, accessToken string) (*UnionJD, error) {
+	return &UnionJD{
+		appKey:      appKey,
+		appSecret:   appSecret,
+		accessToken: accessToken,
+	}, nil
 }
 
 // Version returns the version of the jd service.
 func (u *UnionJD) Version() string {
 	return version
+}
+
+// QueryCate query category
+func (u *UnionJD) QueryCate(ctx context.Context) {
+
 }

@@ -8,7 +8,10 @@ package util
 
 import (
 	"context"
+	"crypto/md5"
+	"encoding/hex"
 	"fmt"
+	"sort"
 	"strings"
 
 	"github.com/bytedance/sonic/decoder"
@@ -43,4 +46,29 @@ func HTTPGet(url string) (string, error) {
 	fmt.Printf("%+v", o) // map[1:2 a:b]
 
 	return string(res.Body()), nil
+}
+
+// Sign md5 sign
+func Sign(params map[string]string, appSecret string) string {
+	// params key list
+	keyList := make([]string, 0, len(params))
+	for k := range params {
+		keyList = append(keyList, k)
+	}
+	// sort
+	sort.Strings(keyList)
+	var b strings.Builder
+	for _, key := range keyList {
+		if val, ok := params[key]; ok {
+			if _, err := b.WriteString(fmt.Sprintf("%s%s", key, val)); err != nil {
+				return ""
+			}
+		}
+	}
+
+	hash := md5.New()
+	if _, err := hash.Write([]byte(appSecret + b.String() + appSecret)); err != nil {
+		return ""
+	}
+	return strings.ToUpper(hex.EncodeToString(hash.Sum(nil)))
 }
