@@ -25,6 +25,7 @@ import (
 
 // Goods .
 type Goods struct {
+	ctx    context.Context
 	config *config.Config
 }
 
@@ -38,6 +39,7 @@ func NewGoods(ctx context.Context, c *config.Config) (*Goods, error) {
 	}
 
 	return &Goods{
+		ctx:    ctx,
 		config: c,
 	}, nil
 }

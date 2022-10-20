@@ -20,6 +20,7 @@ import (
 
 // Orders is a jd service.
 type Orders struct {
+	ctx    context.Context
 	config *config.Config
 }
 
@@ -33,6 +34,7 @@ func NewOrders(ctx context.Context, c *config.Config) (*Orders, error) {
 	}
 
 	return &Orders{
+		ctx:    ctx,
 		config: c,
 	}, nil
 }
