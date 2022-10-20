@@ -79,7 +79,7 @@ linters-settings:
     ignore-words:
       - cancelled
   goimports:
-    local-prefixes: github.com/houseme/union-jd-go
+    local-prefixes: github.com/houseme/union-go
   godot:
     # Comments to be checked: `declarations`, `toplevel`, or `all`.
     # Default: declarations

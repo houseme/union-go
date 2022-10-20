@@ -1,10 +1,10 @@
-# UNION-JD-GO
+# UNION-GO
 
-[![Go Doc](https://godoc.org/github.com/houseme/union-jd-go?status.svg)](https://godoc.org/github.com/houseme/union-jd-go)
-[![GoFrame CI](https://github.com/houseme/union-jd-go/actions/workflows/go.yml/badge.svg)](https://github.com/houseme/union-jd-go/actions/workflows/go.yml)
-[![Go Report](https://goreportcard.com/badge/github.com/houseme/union-jd-go?v=1)](https://goreportcard.com/report/github.com/houseme/union-jd-go)
-[![Production Ready](https://img.shields.io/badge/production-ready-blue.svg)](https://github.com/houseme/union-jd-go)
-[![License](https://img.shields.io/github/license/houseme/union-jd-go.svg?style=flat)](https://github.com/houseme/union-jd-go)
+[![Go Doc](https://godoc.org/github.com/houseme/union-go?status.svg)](https://godoc.org/github.com/houseme/union-go)
+[![GoFrame CI](https://github.com/houseme/union-go/actions/workflows/go.yml/badge.svg)](https://github.com/houseme/union-go/actions/workflows/go.yml)
+[![Go Report](https://goreportcard.com/badge/github.com/houseme/union-go?v=1)](https://goreportcard.com/report/github.com/houseme/union-go)
+[![Production Ready](https://img.shields.io/badge/production-ready-blue.svg)](https://github.com/houseme/union-go)
+[![License](https://img.shields.io/github/license/houseme/union-go.svg?style=flat)](https://github.com/houseme/union-go)
 
 JD.com Alliance Open platform API Interface Golang SDK (Development Kit)
 
@@ -44,7 +44,7 @@ JD.com Alliance optimizes the core competence of the alliance, such as commodity
 Enter your repo. directory and execute following command:
 
 ```bash
-go get -u -v github.com/houseme/union-jd-go
+go get -u -v github.com/houseme/union-go
 ```
 
 # Limitation

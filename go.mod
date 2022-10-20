@@ -1,4 +1,4 @@
-module github.com/houseme/union-jd-go
+module github.com/houseme/union-go
 
 go 1.18
 

@@ -1,9 +1,9 @@
 /*
- * Copyright union-jd-go Author(https://houseme.github.io/union-jd-go/). All Rights Reserved.
+ * Copyright union-jd-go Author(https://houseme.github.io/union-go/). All Rights Reserved.
  *
  * This Source Code Form is subject to the terms of the MIT License.
  * If a copy of the MIT was not distributed with this file,
- * You can obtain one at https://github.com/houseme/union-jd-go.
+ * You can obtain one at https://github.com/houseme/union-go.
  */
 
 // Package orders is an internal service.
@@ -15,7 +15,7 @@ import (
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/net/gtrace"
 
-	"github.com/houseme/union-jd-go/config"
+	"github.com/houseme/union-go/config"
 )
 
 // Orders is a jd service.
