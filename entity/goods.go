@@ -238,3 +238,22 @@ func (req *UnionOpenGoodsJingFenQueryRequest) JSONParams() (string, error) {
 func (req *UnionOpenGoodsJingFenQueryRequest) ResponseName() string {
 	return "jd_union_open_goods_jingfen_query_response"
 }
+
+// JDUnionOpenGoodsBigFieldQueryTopLevel 京粉精选商品查询接口
+type JDUnionOpenGoodsBigFieldQueryTopLevel struct {
+	JDUnionOpenGoodsBigFieldQueryResponse JDUnionOpenGoodsBigFieldQueryResponse `json:"jd_union_open_goods_bigfield_query_responce"`
+}
+
+// JDUnionOpenGoodsBigFieldQueryResponse 京粉精选商品查询接口响应
+type JDUnionOpenGoodsBigFieldQueryResponse struct {
+	Result string `json:"queryResult"`
+	Code   string `json:"code"`
+}
+
+// JDUnionOpenGoodsBigFieldQueryResult 京粉精选商品查询接口结果
+type JDUnionOpenGoodsBigFieldQueryResult struct {
+	Code      int64         `json:"code"`
+	Data      []interface{} `json:"data"`
+	Message   string        `json:"message"`
+	RequestID string        `json:"requestId"`
+}

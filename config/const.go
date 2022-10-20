@@ -6,25 +6,53 @@
  * You can obtain one at https://github.com/houseme/union-jd-go.
  */
 
-package consts
+package config
+
+import (
+	"time"
+)
 
 const (
-	// JdUnionOpenCategoryGoodsGet jd.union.open.category.goods.get
+	// Version golang sdk version
+	Version = "0.0.1"
+
+	// ServerURL this is JD open server url;
+	serverURL = "https://api.jd.com/routerjson"
+
+	// UserAgent name of jd user agent
+	UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+
+	// Timeout request timeout
+	Timeout = 5 * time.Second
+
+	// defaultLogger is the default logger for the JD open.
+	defaultLogger = "union-jd-go"
+)
+
+const (
+	RequestFormat     = "json"
+	RequestVersion    = "1.0"
+	RequestTimestamp  = "Y-m-d H:i:s"
+	RequestSignMethod = "md5"
+)
+
+const (
+	// UnionOpenCategoryGoodsGet jd.union.open.category.goods.get
 	// 商品类目查询接口
 	// see https://union.jd.com/openplatform/api/v2?apiName=jd.union.open.category.goods.get
-	JdUnionOpenCategoryGoodsGet = "jd.union.open.category.goods.get"
+	UnionOpenCategoryGoodsGet = "jd.union.open.category.goods.get"
 
 	// DefaultParentID 父类目id 一级类目id为0
 	// see https://union.jd.com/openplatform/api/v2?apiName=jd.union.open.category.goods.get
-	DefaultParentID = 0
+	DefaultParentID uint = 0
 
 	// GradeZero 类目级别(类目级别 0，1，2 代表一、二、三级类目)
 	// see https://union.jd.com/openplatform/api/v2?apiName=jd.union.open.category.goods.get
-	GradeZero = 0
+	GradeZero uint = 0
 	// GradeOne 类目级别(类目级别 0，1，2 代表一、二、三级类目)
 	// see https://union.jd.com/openplatform/api/v2?apiName=jd.union.open.category.goods.get
-	GradeOne = 1
+	GradeOne uint = 1
 	// GradeTwo 类目级别(类目级别 0，1，2 代表一、二、三级类目)
 	// see https://union.jd.com/openplatform/api/v2?apiName=jd.union.open.category.goods.get
-	GradeTwo = 2
+	GradeTwo uint = 2
 )

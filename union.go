@@ -9,37 +9,39 @@ package jd
 import (
 	"context"
 
-	"github.com/gogf/gf/v2/os/glog"
-)
+	"github.com/gogf/gf/v2/net/gtrace"
 
-const (
-	version   = "0.0.1"
-	serverURL = "https://router.jd.com/api"
+	"github.com/houseme/union-jd-go/config"
+	"github.com/houseme/union-jd-go/goods"
+	"github.com/houseme/union-jd-go/orders"
 )
 
 // UnionJD is a jd service.
 type UnionJD struct {
-	accessToken string
-	appKey      string
-	appSecret   string
-	logger      glog.ILogger
 }
 
 // NewUnionJD returns a jd service.
-func NewUnionJD(ctx context.Context, appKey, appSecret, accessToken string) (*UnionJD, error) {
-	return &UnionJD{
-		appKey:      appKey,
-		appSecret:   appSecret,
-		accessToken: accessToken,
-	}, nil
+func NewUnionJD() *UnionJD {
+	return &UnionJD{}
 }
 
 // Version returns the version of the jd service.
 func (u *UnionJD) Version() string {
-	return version
+	return config.Version
 }
 
-// QueryCate query category
-func (u *UnionJD) QueryCate(ctx context.Context) {
+// GetGoods to get goods
+func (u *UnionJD) GetGoods(ctx context.Context, c *config.Config) (*goods.Goods, error) {
+	ctx, span := gtrace.NewSpan(ctx, "tracing-union-GetGoods")
+	defer span.End()
 
+	return goods.NewGoods(ctx, c)
+}
+
+// GetOrders to get orders
+func (u *UnionJD) GetOrders(ctx context.Context, c *config.Config) (*orders.Orders, error) {
+	ctx, span := gtrace.NewSpan(ctx, "tracing-union-GetOrders")
+	defer span.End()
+
+	return orders.NewOrders(ctx, c)
 }
